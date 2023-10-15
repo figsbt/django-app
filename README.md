@@ -21,7 +21,7 @@
 
 
 ## How to setup and test the APIs
-* Working directory    : [django-app/BackendAssignment](./BackendAssignment)
+* Working directory    : [django-app](.)
 * Set ENV variables    : `export DB_NAME=postgres DB_USER=postgres DB_PASSWORD=bap1er DB_HOST=localhost DB_PORT=5432 SECRET_KEY=fl^r%j9l@zev`
 * Build docker compose : `docker compose build`
 * Start docker compose : `docker compose up -d`
