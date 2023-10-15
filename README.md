@@ -77,3 +77,4 @@ Testing the APIs
 ## Good to haves (But couldn't add because of lack of time)
     - 100% test coverage
     - CICD and tests part of CI step
+    - The secrets are exposed as part of README but ideally, they should be pulled on-fly from a secret store like Vault etc.
