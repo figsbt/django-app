@@ -14,9 +14,17 @@
 
 
 ## Design
-* Django web app to serve user-create, user-login and create-post APIs                   | [a relative link](BackendAssignment/api/urls.py)
-* User and Post Models as described here with required fields (includes authentication)  | [a relative link](BackendAssignment/api/models.py)
-* The django-app is containarized along with Postgres image and run via docker-compose   | [a relative link](docker-compose.yml)
+* Django web app to serve user-create, user-login and create-post APIs                   | [api-app-urls](BackendAssignment/api/urls.py)
+* User and Post Models as described here with required fields (includes authentication)  | [api-app-models](BackendAssignment/api/models.py)
+* The django-app is containarized along with Postgres image and run via docker-compose   | [docker-compose](docker-compose.yml)
+* The setup is of single node right now, have detailed on how to scale the above setup for performance and scale in a section below.
 
-### export DB_NAME=postgres DB_USER=postgres DB_PASSWORD=bap1er DB_HOST=localhost DB_PORT=5432 SECRET_KEY=fl^r%j9l@zev
-### README, tests, docker-compose
+
+## How to setup and test the APIs
+* Working directory    : [django-app/BackendAssignment](./BackendAssignment)
+* Set ENV variables    : `export DB_NAME=postgres DB_USER=postgres DB_PASSWORD=bap1er DB_HOST=localhost DB_PORT=5432 SECRET_KEY=fl^r%j9l@zev`
+* Build docker compose : `docker compose build`
+* Start docker compose : `docker compose up -d`
+* Stop docker compose  :
+    - `docker compose down -v` # to remove volumes too
+    - `docker compose down` # to retain state of postgres
