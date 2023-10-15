@@ -15,4 +15,7 @@
 
 
 ## Design
-* Django web app to serve user-create, user-login and create-post APIs
+* Django web app to serve user-create, user-login and create-post APIs                   | [a relative link](BackendAssignment/api/urls.py)
+* User and Post Models as described here with required fields (includes authentication)  | [a relative link](BackendAssignment/api/models.py)
+* The django-app is containarized along with Postgres image and run via docker-compose   | [a relative link](docker-compose.yml)
+
