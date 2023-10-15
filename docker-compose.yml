@@ -17,9 +17,10 @@ services:
       - /bin/bash 
       - -c 
       - |
+        sleep 10
         python manage.py makemigrations
         python manage.py migrate
-        gunicorn BackendAssignment.wsgi:application --bind 0.0.0.0:8000
+        gunicorn BackendAssignment.wsgi:application --bind 0.0.0.0:8000 --workers $APP_WORKERS
     volumes:
       - .:/BackendAssignment
     ports:
@@ -31,6 +32,7 @@ services:
       - DB_USER=$DB_USER
       - DB_PASSWORD=$DB_PASSWORD
       - SECRET_KEY=$SECRET_KEY
+      - APP_WORKERS=$APP_WORKERS
     depends_on:
       - pgsqldb
     restart: unless-stopped
