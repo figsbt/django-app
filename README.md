@@ -3,8 +3,8 @@
 
     
 ## Assignment Checklist 
-1. Create a Django project named "BackendAssignment."-----------------| :heavy_check_mark: 
-2. Develop a Django app within the project called "api."--------------| :heavy_check_mark: 
+1. Create a Django project named "BackendAssignment."                 | :heavy_check_mark: 
+2. Develop a Django app within the project called "api."              | :heavy_check_mark: 
 3. Create two models named "User" and "Post".                         | :heavy_check_mark: 
    with appropriate fields and relationships between them.            | :heavy_check_mark: 
    Ensure that the User model includes fields for authentication.     | :heavy_check_mark: 
