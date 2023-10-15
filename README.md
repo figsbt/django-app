@@ -1,7 +1,6 @@
 # Django App | BackendAssignment
 
-# export DB_NAME=postgres DB_USER=postgres DB_PASSWORD=bap1er DB_HOST=localhost DB_PORT=5432 SECRET_KEY=fl^r%j9l@zev
-# README, tests, docker-compose
+
     
 ## Assignment Checklist 
 1. Create a Django project named "BackendAssignment."                 | :heavy_check_mark: 
@@ -19,3 +18,5 @@
 * User and Post Models as described here with required fields (includes authentication)  | [a relative link](BackendAssignment/api/models.py)
 * The django-app is containarized along with Postgres image and run via docker-compose   | [a relative link](docker-compose.yml)
 
+### export DB_NAME=postgres DB_USER=postgres DB_PASSWORD=bap1er DB_HOST=localhost DB_PORT=5432 SECRET_KEY=fl^r%j9l@zev
+### README, tests, docker-compose
