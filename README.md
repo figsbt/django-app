@@ -28,3 +28,52 @@
 * Stop docker compose  :
     - `docker compose down -v` # to remove volumes too
     - `docker compose down` # to retain state of postgres
+
+
+---
+
+Testing the APIs 
+
+* via cURL
+
+```
+1. Create User API : An API endpoint to create a new User
+    - Request
+        - curl --location 'http://127.0.0.1:8000/api/create-user' --header 'Content-Type: application/json' --data-raw '{ "email_id": "user1@email.com", "password": "ashaR3!er", "full_name": "My Name" }'
+    - Response
+        - {"Message": "User account created successfully for user1@email.com"}
+```
+
+```
+2. Login User API: An API endpoint to login; which returns an JWT token for Authorization
+    - Request
+        - curl --location 'http://127.0.0.1:8000/api/login-user' --header 'Content-Type: application/json' --data-raw '{"email_id": "user1@email.com", "password": "ashaR3!er"}'
+    - Response
+        - {"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGVtYWlsLmNvbSJ9.cM7hr3Mm2wmzz6m7NO928Vl-I7JSBMQpdTN2058YXnI"}
+```
+
+```
+3. Create Post API: An API endpoint to create a Post only if authenticated via a valid JWT token
+    - Request
+        - curl --location 'http://127.0.0.1:8000/api/create-post' --header 'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQGVtYWlsLmNvbSJ9.cM7hr3Mm2wmzz6m7NO928Vl-I7JSBMQpdTN2058YXnI' --header 'Content-Type: application/json' --data '{"post_content": "NASA experts wanted India to share space technology after seeing Chandrayaan-3 craft development: ISRO chief Somanath"}'
+    - Response
+        - {"Message": "Post created successfully!"}
+```
+
+* postman-collection is attached in the email
+
+---
+
+## How to scale this. A short note.
+
+    - Any RDBMS(PostgresSQL here) should be a muti-node distributed setup. 
+        - Data sharded across the nodes for better performance
+        - Each primary shard with a replica for high availability
+        - Something like this (https://vitess.io/) to scale MySQL
+
+    - As the web-app itself is containarized, it can be deployed on kubernetes to scale on demand.
+
+
+## Good to haves (But couldn't add because of lack of time)
+    - 100% test coverage
+    - CICD and tests part of CI step
