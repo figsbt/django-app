@@ -75,6 +75,6 @@ Testing the APIs
 
 
 ## The following could have been improved / added
-    - More automated test coverage | [Testing django models, views and endpoints](https://realpython.com/testing-in-django-part-1-best-practices-and-examples/)
+    - More automated test coverage | ![Testing django models, views and endpoints](https://realpython.com/testing-in-django-part-1-best-practices-and-examples/)
     - CICD and tests part of CI step
     - The secrets are exposed as part of README but ideally, they should be pulled on-fly from a secret store like Vault etc.
