@@ -8,7 +8,7 @@
 3. Create two models named "User" and "Post".                         | :heavy_check_mark: 
    with appropriate fields and relationships between them.            | :heavy_check_mark: 
    Ensure that the User model includes fields for authentication.     | :heavy_check_mark: 
-4. APIs for user-registration, auth(JWT tockens), posting new content.| :heavy_check_mark: 
+4. APIs for user-registration, auth(JWT tokens), posting new content. | :heavy_check_mark: 
 5. Authorisation to ensure only authenticated-users can create posts. | :heavy_check_mark: 
 6. Configure the Django project to use PostgreSQL as DB.              | :heavy_check_mark: 
 
@@ -74,7 +74,7 @@ Testing the APIs
     - As the web-app itself is containarized, it can be deployed on kubernetes to scale on demand.
 
 
-## Good to haves (But couldn't add because of lack of time)
-    - 100% test coverage
+## The following could have been improved / added
+    - More test coverage | some-tests-here
     - CICD and tests part of CI step
     - The secrets are exposed as part of README but ideally, they should be pulled on-fly from a secret store like Vault etc.
